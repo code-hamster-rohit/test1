@@ -14,8 +14,8 @@ def changeDatabase():
         df = pd.read_csv('/tmp/newDatabase.csv')
     except:
         df = pd.DataFrame(columns=['number'])
-        df.to_csv('static/database/newDatabase.csv', index=False)
-    df = pd.read_csv('static/database/newDatabase.csv')
+        df.to_csv('/tmp/newDatabase.csv', index=False)
+    df = pd.read_csv('/tmp/newDatabase.csv')
     new_index = len(df.index)
     df.loc[new_index] = [data['value']]
     df.to_csv('/tmp/newDatabase.csv', index=False)
